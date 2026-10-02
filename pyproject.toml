@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Morlenn"
+version = "0.1.0"
+description = "Morlenn reconstruction MLD/N2 using in-situ profile, ocean observation and atmospheric model"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=2.4",
+  "scipy>=1.17",
+  "xarray>=2026.4",
+  "netCDF4>=1.7",
+  "scikit-learn>=1.9",
+  "cftime>=1.6",
+  "tqdm>=4.68",
+  "pandas>=3.0",
+  "typing_extensions>=4.15",
+  "tensorboard>=2.21",
+]
+# NB: torch installed separately to adapt to CUDA installed
+#   pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cu118
+
+[project.optional-dependencies]
+plot = ["matplotlib"]
+
+[project.scripts]
+upperdyn = "morlenn.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["morlenn*"]
