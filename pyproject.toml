@@ -7,6 +7,7 @@ name = "Morlenn"
 version = "0.1.0"
 description = "Morlenn reconstruction MLD/N2 using in-situ profile, ocean observation and atmospheric model"
 requires-python = ">=3.11"
+license = {text = "MIT"}
 dependencies = [
   "numpy>=2.4",
   "scipy>=1.17",
